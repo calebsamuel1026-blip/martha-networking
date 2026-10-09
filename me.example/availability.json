@@ -1,0 +1,11 @@
+{
+  "_help": "EXAMPLE. window = the hours you take calls [start, end], 24-hour clock, in tz. recurring = weekly busy blocks (classes, practice, work). one_off = single busy dates (calls already booked, exams). Days are Mon Tue Wed Thu Fri Sat Sun. Times are HH:MM. Emails never list these: replies offer one simple range.",
+  "window": [8, 17],
+  "tz": "America/New_York",
+  "recurring": [
+    {"days": ["Tue", "Thu"], "start": "15:00", "end": "16:30", "label": "class"}
+  ],
+  "one_off": [
+    {"date": "2026-10-16", "start": "14:00", "end": "14:45", "label": "call"}
+  ]
+}
