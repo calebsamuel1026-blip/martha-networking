@@ -64,6 +64,15 @@ def test_at_dot_normalization(obfuscated):
     assert ADDRESS in V.normalize(f"Email: {obfuscated} | Phone: on request")
 
 
+def test_normalize_is_fast_on_pages_with_long_blank_runs():
+    # A real 2.7 MB site page with thousands of long whitespace runs hung the old regex for minutes.
+    import time
+    page = ("<div>" + " " * 600 + "\n" * 50 + "</div>") * 3000 + f"Email: {ADDRESS}"
+    start = time.time()
+    assert ADDRESS in V.normalize(page)
+    assert time.time() - start < 2
+
+
 def test_rot13_is_its_own_inverse():
     scrambled = codecs.encode(ADDRESS, "rot13")
     assert scrambled == "qnan.erlrf@rknzcyr.pbz"

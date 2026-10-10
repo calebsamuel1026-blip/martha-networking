@@ -112,9 +112,10 @@ def cf_decode(h):
 
 
 def normalize(text):
-    t = text.lower()
-    t = re.sub(r"\s*(\[at\]|\(at\)|\{at\}|\s+at\s+)\s*", "@", t)
-    t = re.sub(r"\s*(\[dot\]|\(dot\)|\{dot\}|\s+dot\s+)\s*", ".", t)
+    # Collapse whitespace first: "\s*...\s+at\s+" on raw HTML backtracks for minutes on long blank runs.
+    t = re.sub(r"\s+", " ", text.lower())
+    t = re.sub(r" ?(\[at\]|\(at\)|\{at\}| at ) ?", "@", t)
+    t = re.sub(r" ?(\[dot\]|\(dot\)|\{dot\}| dot ) ?", ".", t)
     return t
 
 
