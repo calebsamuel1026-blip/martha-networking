@@ -40,9 +40,10 @@ Same structure as WINNING-EMAILS.md, one change: the ask is direct, because the 
    prior job, or the company they just bought.
 2. One plain sentence tying it to you: the one experience that fits their thesis best. No list, no bragging.
 3. A short "why you" line.
-4. **The ask, plainly:** "I'm a current sophomore at <School> studying <major>, and I'd love to help with your search
-   part-time and remotely this fall and spring, whether that's sourcing and screening companies, industry research
-   or first-pass models." Vary the wording across a batch, keep it this clear. Don't mention pay in the first email.
+4. **The ask, plainly and open-ended:** "I'm a current sophomore at <School> studying <major>, and I'd love to help
+   with your search part-time and remotely, with anything you need." Don't list specific tasks (sourcing, screening,
+   models): offering anything reads better and lets the searcher decide. Attach the résumé. Vary the wording across a
+   batch, keep it this clear. Don't mention pay in the first email.
 5. A short call ask, "Resume attached.", "Thanks for your time." 119-159 words. Subject: 2-3 words naming their thing
    + " | <Fund> Interest".
 
