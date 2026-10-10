@@ -32,7 +32,7 @@ line below and press Enter.
 
 1. **Get the code.** Either click **Code > Download ZIP** on the GitHub page and unzip it, or run:
    ```
-   git clone <this repo's URL>
+   git clone https://github.com/calebsamuel1026-blip/martha-networking.git
    ```
 2. **Go into the folder:**
    ```
@@ -68,9 +68,11 @@ Type these in Claude Code, inside the `martha-networking` folder.
 
 | When | Command | What happens |
 |---|---|---|
+| Every morning | `/daily` | The whole morning in one command: replies, follow-ups, updates after you apply, calls coming up, and how many emails are ready. |
 | Every morning | `/check-replies` | Finds new replies and bounces, labels them, drafts your answers. Nothing is sent until you say "send". |
 | Every morning | `/follow-ups` | Drafts day-7 and day-14 follow-ups for people who haven't replied. |
 | Most weekdays | `/find-contacts 30` | Researches about 30 new people with printed email addresses and checks every address. |
+| Want real deal work now | `/find-search-funds 40` | Finds active search funds (one searcher each) who could use a part-time remote analyst, for real experience before recruiting. See below. |
 | After that | `/draft` | Martha writes one email per person and checks each against the rules. You read the samples and edit. |
 | When you're happy | `/send-day` | Re-checks the addresses, shows you 3 emails in full, waits for you to type **send**, then sends in small groups. |
 | Someone replied | `/reply <name>` | Drafts a reply in their tone, with your open times if it's about scheduling. |
@@ -80,6 +82,19 @@ Type these in Claude Code, inside the `martha-networking` folder.
 
 If you edit a draft or say "never write it like that", Claude saves that rule to `me/lessons.md`. Martha reads it
 before every email, so the drafts get closer to your voice over time.
+
+## Search funds: get real deal experience early
+
+A search fund is one or two people (the searchers) looking to buy one small company and run it. They review hundreds
+of businesses, and many take part-time, remote students to help: finding companies, reading financials, quick
+models, one-page write-ups. It's real transaction work for your résumé before big recruiting cycles open.
+
+- `/find-search-funds 40` finds active searchers with a printed email, one per fund, and checks each address.
+- `/draft` writes each one a short email in the same style, with a plain offer to help part-time.
+- On [Searchfunder](https://www.searchfunder.com) (free account), the Jobs tab lists searcher internships. Sign in
+  yourself and Claude can go through the posts with you and draft your note.
+
+Details and how to handle a yes: `knowledge/SEARCH-FUNDS.md`.
 
 ## Safety rules (built in)
 
@@ -138,6 +153,9 @@ Your edits become rules for next time.
 - To pause for a while, just don't run `/send-day`. Nothing ever sends on its own.
 - To cut off access completely, delete the app password at
   [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords), or delete `me/config.env`.
+
+**How do I get updates?**
+Inside the folder, run `git pull`. Your `me/` and `data/` folders are never touched by an update.
 
 **Where is my data?**
 In `me/` and `data/` inside this folder, on your computer only. Both are listed in `.gitignore`, so they are never

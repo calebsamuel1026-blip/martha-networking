@@ -110,7 +110,8 @@ def term_pattern(term):
         tail = re.escape(last[:-1]) + r"(s|es|'s)?"
     else:
         tail = re.escape(last) + r"(s|es|ing|ed|er|ers|'s)?"
-    return rf"\b{r'[\s/-]*'.join([re.escape(w) for w in words[:-1]] + [tail])}\b"
+    sep = r"[\s/-]*"  # kept outside the f-string: a backslash there is a SyntaxError before Python 3.12
+    return rf"\b{sep.join([re.escape(w) for w in words[:-1]] + [tail])}\b"
 
 
 def interest_pattern(term):

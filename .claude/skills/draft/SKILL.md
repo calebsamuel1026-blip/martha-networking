@@ -25,6 +25,9 @@ Arguments: `$ARGUMENTS`. If no batch is given, use the newest folder in `data/re
    > over `to`, `email_confidence`, `email_source_url`, `address_check`, `application` and `findings`. Fill
    > `research.hook_used` and `call_prep`.
    > Never invent a fact. Skip thin research rather than writing a generic email.
+   > If the batch name contains "searchfunds", these are searchers, not bankers: also read
+   > `knowledge/SEARCH-FUNDS.md` and use its direct ask (help part-time and remotely with sourcing, research
+   > and first-pass models), one email per fund, no mention of pay.
    > Then run `python tools/gate.py data/drafts/<batch>` and fix every failure by rewriting.
    > Return the table, the skipped list, and 3 sample paths.
 
