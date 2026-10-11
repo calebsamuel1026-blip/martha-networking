@@ -1,12 +1,19 @@
 ---
 name: onboard
-description: First-time setup for a new user. Use when me/profile.md does not exist yet, or when the user says "set me up", "onboard", "start", "redo my profile", or wants to change their field, targets or availability. Interviews them, writes me/profile.md, me/strategy.md and me/availability.json, walks them through creating a Gmail app password that they type in themselves, and runs a dry-run test. Sends nothing.
+description: First-time setup for a new user. Use when me/profile.md does not exist yet, when someone has just cloned or pasted this repo's link, or when the user says "set me up", "onboard", "start", "redo my profile", or wants to change their field, targets, voice or availability. Runs a long, friendly interview so the emails sound like them and use only true facts, writes me/profile.md, me/strategy.md and me/availability.json, calibrates their writing voice on two sample emails, walks them through a Gmail app password that they type in themselves, and runs a dry-run test. Sends nothing.
 argument-hint: "[redo]"
 ---
 # /onboard
 
-Goal: a working `me/` folder that describes the user truthfully, plus a tested Gmail connection, in about 20 minutes.
-Be warm and brief. Many users have barely used a terminal, so explain each step in one plain sentence.
+Goal: Claude knows this person well enough to write cold emails that sound like them and that use only true facts,
+plus a tested Gmail connection. Plan on 30 to 45 minutes. The interview is long on purpose: every good email in this
+system came from a real, specific overlap between the student and the person they wrote to, and you can only find
+those overlaps if you know the student well.
+
+Be warm, curious and brief. Many users have barely used a terminal, so explain each step in one plain sentence.
+Ask **one round at a time** (3 to 6 questions), wait for the answers, then go on. Tell them up front: "I'm going to
+ask a lot of questions so your emails sound like you. Skip anything you'd rather not share. Short answers are fine."
+Write down only what they say. Never fill a gap with a guess, never "improve" a fact, never add color.
 
 ## Steps
 
@@ -22,41 +29,91 @@ Be warm and brief. Many users have barely used a terminal, so explain each step 
    `config.env.example`). Then copy `me/config.env.example` to `me/config.env`. If `me/` already exists and the user
    didn't say `redo`, read `me/profile.md` and only ask about what's missing or what they want to change.
 
-3. **Interview the user.** Ask in small groups of 2 or 3 questions, not all at once. Write down only what they
-   say, and never fill gaps with guesses.
-   - Name as it should appear in emails, school, class year, major and minor, and the student clubs or teams they
-     actually belong to.
-   - The field(s) and target roles (for example "audit internship, Big 4 and regional firms", "summer analyst,
-     industrials coverage", "product marketing intern at consumer brands"), the summer(s) they're recruiting for,
-     and any location limits.
-   - Interests and story facts that are true and that they're happy to share: hometown, languages, sports, music,
-     jobs, a project they built, something they're proud of. For each one, ask "is it OK if an email mentions this?"
-   - Never-say list: facts, words or topics they never want in an email.
-   - Why this field: one sentence in their words (saved as `why_field`). Then the interest line every first email
-     uses, as `interest_line`, for example "a strong interest in audit at <Firm>". The gate allows this exact phrase
-     to repeat across a batch.
-   - Résumé: ask them to drop the PDF into `me/resume/` and tell you the file name. Don't read its contents
-     unless they ask you to.
-   - Firms: their list by tier (dream, target, safety), or "help me build it". If they want help, propose a list
-     with each firm's student program page and the usual application window. Mark windows you haven't confirmed as
-     estimates. They approve the list.
-   - Calls: their usual free hours for 20-minute calls, time zone, recurring classes or practices, and any dates
-     they're already busy.
+3. **The interview (8 rounds).** After each round, play back in one or two lines what you wrote down, so they can
+   correct it. For every personal fact, ask "OK if an email mentions this?" and record the answer.
+
+   **Round 1: basics**
+   - Your name as it should appear in emails, and the first name you sign with.
+   - School (full name), the short name you'd use in a sentence, class year, standing (freshman, sophomore...).
+   - Major, minor, and any concentration or certificate.
+   - Where did you grow up? Where do you live now?
+
+   **Round 2: the goal**
+   - What field and roles are you going after? Be as concrete as you can ("audit intern at Big 4 and regional
+     firms", "summer analyst in industrials coverage", "product marketing intern at consumer brands").
+   - Which summers are you recruiting for, nearest first? Any program deadlines you already know?
+   - Locations: where would you work? Anywhere you won't?
+   - Firm size: is there a floor ("middle market and up", "no startups under 50 people") or firms you'd skip?
+   - Dream firms, target firms, safeties. Or say "help me build the list".
+   - Why this field? One or two sentences in your own words.
+
+   **Round 3: experience, one item at a time** (jobs, internships, clubs, research, teams, projects, things you
+   started). For each one:
+   - What it is, your title, and the dates.
+   - What you actually did, in plain words. Any real numbers you're comfortable sharing.
+   - One specific moment or problem from it that you'd tell someone on a call.
+   - Is it on your résumé? OK to mention in an email?
+
+   **Round 4: things you built or started** (a business, an app, a club, a fundraiser, a channel, anything).
+   - What it does, who it's for, how far it got. Only true, current facts ("I started X, a ... for ...").
+   - What you'd want a professional to find interesting about it, in one line.
+
+   **Round 5: you outside of work** (these become the "real overlap" with people whose pages share them)
+   - Heritage, languages you'd use on a call, places you've lived.
+   - Sports you play or played (position, level) and teams you follow.
+   - Music, art, instruments (how many years), performing.
+   - Volunteering, faith or community groups, causes (only if they want these used).
+   - Hobbies and anything unusual about you that people remember.
+   - Then: "Which three of these would you most like to lead with when someone shares them?"
+
+   **Round 6: your voice**
+   - Paste two or three sentences you've written recently to a professor, boss or recruiter (an email you liked).
+     If you don't have one, write three sentences about yourself the way you'd say them out loud.
+   - How formal do you want to sound: casual, friendly-professional, or formal?
+   - Words or phrases you'd never say ("pick your brain", "I'm passionate about", "synergy"...).
+   - Punctuation you dislike (some people never want semicolons, em dashes or exclamation marks).
+   - Anything you never want an email to do: brag, list your résumé, sound too humble, mention grades...
+
+   **Round 7: never-say and privacy**
+   - Facts or topics that must never appear in an email, with the reason (for example a family business that isn't
+     yours, a scholarship that's private, a job title that's wrong if shortened).
+   - OK to give your phone number in replies once someone agrees to a call?
+
+   **Round 8: logistics and outreach rules**
+   - Your usual free hours for 20-minute calls, time zone, recurring classes, practices or work shifts, and dates
+     you're already busy.
+   - Days or times emails must NOT go out (some people never send on Fridays or weekends).
+   - How many emails a day you'd like to send once you're set up (start with 20 to 40 on a new Gmail).
+   - Max people per firm (default 3). Who first: recruiters, alumni, seniors or juniors?
+   - Upcoming trips or events where you could meet people in person (city and dates).
+   - Résumé: drop the PDF into `me/resume/` and tell me the file name. Don't read it unless they ask.
 
 4. **Write the files.** Keep the exact front-matter keys and section headings from `me.example/` so the tools can
    parse them.
-   - `me/profile.md`: front matter (lists written as `a; b; c`), then the story facts, why_field and never-say
-     list, exactly as the user gave them. The gate reads these keys, so fill them: `school`, `standing` (for
-     example sophomore), `interest_line`, `never_say`, and `resume_items` (club, job and project names. A first
-     email may name at most one).
-   - `me/strategy.md`: fields and roles, firm list by tier with application windows and links, and the line
-     `max people per firm: 3` (3 unless the user asks for another number).
+   - `me/profile.md`: front matter (lists written as `a; b; c`), then `# Story`, `# Okay to mention (and when)` and
+     `# Voice`, exactly as the user gave them. The gate reads these keys, so fill them: `school`, `standing`,
+     `interest_line`, `never_say`, `resume_items` (club, job and project names; a first email may name at most one),
+     and `facts` (one short true sentence each, in their words). Put their writing sample, formality, banned words
+     and punctuation rules under `# Voice`. Add every banned word or phrase to `never_say` too.
+   - `me/strategy.md`: fields and roles, firm list by tier with application windows and links (mark unconfirmed
+     windows as estimates), `max people per firm: <n>`, firm-size floor, send days and times to avoid, daily volume,
+     and any trip with dates.
    - `me/availability.json`: `{"window":[start_hour,end_hour],"tz":"<IANA zone>","recurring":[...],"one_off":[...]}`.
    - `me/lessons.md`: leave it as the template (it starts empty).
 
-   Show the user a short summary of each file and ask "anything wrong or missing?" Fix it before moving on.
+   Show a short summary of each file and ask "anything wrong or missing?" Fix it before moving on.
 
-5. **Gmail app password. The user does this themselves.** Never ask for it, never read `me/config.env`, and never
+5. **Calibrate the voice (this is what makes the emails good).** Read `knowledge/WINNING-EMAILS.md`. Ask the user
+   for one real person they'd like to email, or pick a believable example in their field. Have the **martha**
+   subagent write two short first emails to that person using only `me/profile.md`: one leaning on their strongest
+   experience, one on a personal overlap. Show both and ask:
+   - "Does this sound like you? What would you change?"
+   - "Anything here you'd never say?"
+   Save every answer right away with `python tools/capture.py note "<rule in their words + a short example>"` and
+   any banned phrase with `python tools/capture.py ban "<phrase>"`. Rewrite once and confirm they like it. Nothing
+   is sent in this step.
+
+6. **Gmail app password. The user does this themselves.** Never ask for it, never read `me/config.env`, and never
    ask them to paste it in the chat. If they paste it anyway, tell them to delete that app password at
    https://myaccount.google.com/apppasswords and make a new one, and don't repeat or store it anywhere. Walk them
    through it:
@@ -68,7 +125,7 @@ Be warm and brief. Many users have barely used a terminal, so explain each step 
       if the Gmail account is new or rarely used. Save the file.
    5. Tell me "done" when it's saved.
 
-6. **Test, sending nothing.**
+7. **Test, sending nothing.**
    ```
    python tools/send_approved.py
    python tools/send_approved.py --test-login
@@ -80,8 +137,8 @@ Be warm and brief. Many users have barely used a terminal, so explain each step 
    Verification off, or a school-managed account. Explain the fix, and the user edits the file again themselves.
    Never print the file to debug.
 
-7. **Finish.** Tell the user what's ready and what to do next. Keep it to 5 lines or fewer:
-   - `/find-contacts 30` to research the first batch
-   - `/draft` to write it, `/send-day` to send it after they read it
-   - every morning: `/check-replies`, then `/follow-ups`
+8. **Finish.** Tell the user what's ready and what to do next, in 6 lines or fewer:
+   - From now on, open Claude Code inside the `martha-networking` folder so the slash commands work.
+   - `/find-contacts 30` to research the first batch, `/draft` to write it, `/send-day` to send it after you read it.
+   - Every morning: `/daily` (replies, follow-ups, calls).
    - "If you ever edit an email or tell me how you like things said, I'll save it as a rule in me/lessons.md."

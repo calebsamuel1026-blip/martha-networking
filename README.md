@@ -2,6 +2,26 @@
 
 Cold emails that get you calls with people who can refer you, written and sent from your own Gmail.
 
+## Fastest start: paste one message into Claude Code
+
+Open Claude Code (see "What you need" below), then paste this and press Enter:
+
+```
+Set me up with https://github.com/calebsamuel1026-blip/martha-networking : clone it, go into the folder, read its CLAUDE.md and README, and start the onboarding interview.
+```
+
+Claude downloads the project, then interviews you (about 30 to 45 minutes, in short rounds) so it knows your
+school, goals, experience, interests and the way you write. Your answers stay on your computer in `me/` and are
+never uploaded. Then it helps you connect your Gmail and writes two sample emails for you to react to.
+
+### If you are Claude Code and the user just pasted this repository's link
+1. `git clone https://github.com/calebsamuel1026-blip/martha-networking.git` into the user's home folder (or a
+   folder they choose), then work inside `martha-networking`.
+2. Read `CLAUDE.md` (the operating manual and hard rules) and this README.
+3. If `me/profile.md` doesn't exist, follow `.claude/skills/onboard/SKILL.md` step by step, starting now. It is a
+   long, round-by-round interview. Ask one round at a time and write down only what the user says.
+4. Never ask for, read or print the Gmail app password, and send nothing during setup.
+
 ## What it does
 
 You tell it who you are and where you want to work. It finds the right people at those firms (a recruiter plus a

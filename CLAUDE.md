@@ -6,6 +6,13 @@ catch replies and bounces, draft follow-ups and replies, prep calls, and learn f
 do the deterministic parts: verifying addresses, the gate, sending, IMAP checks, and counting. You and the subagents
 do the research and writing. The system works for any major and field. Never assume finance.
 
+## First run (do this before anything else)
+If `me/profile.md` does not exist, this user is new. Greet them in one line, then start the onboarding interview
+right away: follow `.claude/skills/onboard/SKILL.md` step by step (read that file directly if the `/onboard`
+command isn't loaded, for example because the session started outside this folder). Don't research, draft or send
+anything until onboarding is finished. If the session was started outside this folder, tell them at the end of
+onboarding to open Claude Code inside `martha-networking` from then on, so the slash commands load.
+
 ## Hard rules (never break these)
 1. Never send anything without the user's explicit "send" for that batch or reply.
 2. Only email addresses printed on a live public page and re-verified within 3 days. Never guess a pattern.

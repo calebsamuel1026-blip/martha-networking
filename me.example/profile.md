@@ -79,3 +79,12 @@ I want to start my career in audit at a large firm and work toward a CPA.
 - Harbor Lane Bakery: with people who work with restaurants, food or small businesses.
 - VITA: with tax people, or anyone whose page mentions volunteer tax work.
 - Grand Rapids: only with people who live or grew up in West Michigan.
+
+# Voice
+
+<!-- How you write. Claude matches this in every email. Everything below is the fictional example. -->
+- Sample (my own words): "Hi Professor Lee, thanks for walking me through the accrual question after class. It finally clicked when you used the bakery example. See you Thursday."
+- Formality: friendly-professional. Short sentences, plain words.
+- Never use: "pick your brain", "I'm passionate about", exclamation marks.
+- Punctuation: no semicolons, no em dashes.
+- Never: list my résumé, mention grades, sound overly humble ("just a sophomore").
